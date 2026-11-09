@@ -1,0 +1,17 @@
+// hid_apple swaps the ISO Apple keyboard's grave and 102nd key codes.
+// Turn the physical key beside left Shift into a second Shift, and put
+// backtick/tilde on the physical section/plus-minus key below Escape.
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+    include "us(basic)"
+    replace key <TLDE> {
+        type[Group1] = "ONE_LEVEL",
+        symbols[Group1] = [ Shift_L ],
+        actions[Group1] = [ SetMods(modifiers = Shift) ]
+    };
+    replace key <LSGT> {
+        type[Group1] = "TWO_LEVEL",
+        symbols[Group1] = [ grave, asciitilde ]
+    };
+    modifier_map Shift { <LFSH>, <RTSH>, <TLDE> };
+};

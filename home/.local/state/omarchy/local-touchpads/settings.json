@@ -1,0 +1,146 @@
+{
+  "version": 6,
+  "devices": {
+    "apple": {
+      "id": "apple",
+      "label": "Apple",
+      "names": [
+        "apple-mtp-multi-touch"
+      ],
+      "configured": true,
+      "settings": {
+        "clickfinger_behavior": true,
+        "disable_while_typing": true,
+        "natural_scroll": true,
+        "scroll_factor": 0.0081,
+        "tap_to_click": false,
+        "sensitivity": 0.2,
+        "enabled": true,
+        "accel_profile": "custom",
+        "scroll_scale": 0.81,
+        "curve": {
+          "precision": 0.1875,
+          "start": 1.3,
+          "end": 3.5,
+          "fast": 1
+        },
+        "curve_preset": "imported",
+        "scroll_progressive": true,
+        "scroll_curve": {
+          "end": 2.2,
+          "fast": 2,
+          "precision": 0.75,
+          "start": 0.5
+        },
+        "scroll_curve_preset": "custom",
+        "units_per_mm": {
+          "apple-mtp-multi-touch": 98
+        },
+        "imported_curve": {
+          "name": "MacBook Pro (M3 Pro)",
+          "file": "MacBook-Pro-M3-Pro.json",
+          "sha256": "85e1d499d1841a4c9f312abddbc0d74234afd56aa48e3503e0f0f9c8069cf788",
+          "tracking_speed": 1.0,
+          "mm_per_point": 0.167656,
+          "px_per_point": 0.839388,
+          "devices": {
+            "apple-mtp-multi-touch": {
+              "units_per_mm": 98,
+              "step": 0.5034,
+              "points": [
+                0.0,
+                0.017427,
+                0.039729,
+                0.066911,
+                0.098983,
+                0.135951,
+                0.177822,
+                0.224603,
+                0.276302,
+                0.332927,
+                0.394483,
+                0.46098,
+                0.532423,
+                0.60882,
+                0.690179,
+                0.776507,
+                0.86781,
+                0.964097,
+                1.065374,
+                1.171649,
+                1.28293,
+                1.399222,
+                1.520534,
+                1.646873,
+                1.778246,
+                1.91466,
+                2.056124,
+                2.202643,
+                2.354225,
+                2.510878,
+                2.672608,
+                2.839424,
+                3.011331,
+                3.188339,
+                3.370453,
+                3.557681,
+                3.750031,
+                3.947509,
+                4.150123,
+                4.35788,
+                4.570788,
+                4.788853,
+                5.012084,
+                5.240487,
+                5.474069,
+                5.712838,
+                5.956801,
+                6.205965,
+                6.460338,
+                6.719927,
+                6.984739,
+                7.254781,
+                7.530061,
+                7.810586,
+                8.096364,
+                8.3874,
+                8.683704,
+                8.985281,
+                9.29214,
+                9.604287,
+                9.92173,
+                10.244476,
+                10.572533,
+                10.903216
+              ]
+            }
+          }
+        }
+      },
+      "previous_pointer_feel": {
+        "profile": "custom",
+        "curve": {
+          "precision": 0.1875,
+          "start": 1.3,
+          "end": 3.5,
+          "fast": 1
+        },
+        "calibration": {
+          "apple-mtp-multi-touch": 98
+        }
+      },
+      "curve_calibration": {
+        "apple-mtp-multi-touch": 98
+      },
+      "previous_scroll_feel": {
+        "profile": "mac",
+        "curve": {
+          "precision": 1.0,
+          "start": 0.5,
+          "end": 2.2,
+          "fast": 2.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=Automatic display brightness from ambient light
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/wluma daemon
+Restart=on-failure
+RestartSec=5
+Environment=RUST_LOG=info
+PrivateNetwork=true
+
+[Install]
+WantedBy=graphical-session.target

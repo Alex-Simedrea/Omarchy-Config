@@ -1,0 +1,8 @@
+output_name: eDP-1
+entries:
+  brightness:
+  - als: 221
+    luma: 0
+    value: 200
+  dim: []
+  temperature: []

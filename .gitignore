@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.bak
+*.bak.*
+*.lock
+*.so
+*.o
+*.pkg.tar.*
+/build/
+/cache/
+kinetic-scroll/source/tests/physics_test
+kinetic-scroll/source/tests/gesture_test
+kinetic-scroll/source/tests/pixel_accumulator_test

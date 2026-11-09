@@ -1,0 +1,17 @@
+# Adjust the built-in display using ambient light only.
+[als.iio]
+path = "/sys/bus/iio/devices"
+
+[idle]
+enabled = false
+
+[[output.backlight]]
+name = "eDP-1"
+path = "/sys/class/backlight/apple-panel-bl"
+capturer = "none"
+gamma = false
+
+[[keyboard]]
+name = "keyboard"
+path = "/sys/class/leds/white:kbd_backlight"
+enabled = true

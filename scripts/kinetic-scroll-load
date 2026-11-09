@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if hyprctl plugin list -j | python -c 'import json,sys; sys.exit(0 if any(p["name"]=="hypr-kinetic-scroll" for p in json.load(sys.stdin)) else 1)'; then
+ echo 'Kinetic scroll is already loaded; keeping the existing instance.'
+ exit 0
+fi
+hyprctl plugin load "$(readlink -f "$HOME/.local/share/hypr-kinetic-scroll/current.so")"

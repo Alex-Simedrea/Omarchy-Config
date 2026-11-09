@@ -1,0 +1,5 @@
+clang18 https://arm-stable-mirror.omarchy.org/aarch64/extra/clang18-18.1.8-2-aarch64.pkg.tar.xz
+llvm18 https://arm-stable-mirror.omarchy.org/aarch64/extra/llvm18-18.1.8-2-aarch64.pkg.tar.xz
+llvm18-libs https://arm-stable-mirror.omarchy.org/aarch64/extra/llvm18-libs-18.1.8-2-aarch64.pkg.tar.xz
+lld18 https://arm-stable-mirror.omarchy.org/aarch64/extra/lld18-18.1.6-2-aarch64.pkg.tar.xz
+libxml2-legacy https://arm-stable-mirror.omarchy.org/aarch64/extra/libxml2-legacy-2.13.9-2-aarch64.pkg.tar.xz

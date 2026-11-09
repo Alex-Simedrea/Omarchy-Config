@@ -1,0 +1,17 @@
+output_name: keyboard
+entries:
+  brightness:
+  - als: 0
+    luma: 0
+    value: 0
+  - als: 5
+    luma: 0
+    value: 0
+  - als: 14
+    luma: 0
+    value: 43
+  - als: 228
+    luma: 0
+    value: 53
+  dim: []
+  temperature: []

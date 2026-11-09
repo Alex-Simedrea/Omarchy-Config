@@ -1,0 +1,3 @@
+# Unified patches contain context lines whose leading space is part of the format.
+*.patch -whitespace
+*.ko binary

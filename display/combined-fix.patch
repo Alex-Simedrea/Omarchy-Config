@@ -1,0 +1,44 @@
+diff --git a/iomfb_v14_7.c b/iomfb_v14_7.c
+index 5052c47..1bc7001 100644
+--- a/iomfb_v14_7.c
++++ b/iomfb_v14_7.c
+@@ -96,6 +96,16 @@ static int dcp_v14_pmp_wait_ready(struct device_node *entry,
+ #define DCP_V14_LAYER		0
+ #define DCP_V14_BLACK		0xff000000
+ 
++/*
++ * Optional early flip from linux-aurora issue #31. Keep disabled by default:
++ * a two-buffer direct-scanout client could otherwise reuse a buffer early.
++ * The next commit still waits on v14->lock for the firmware swap to finish.
++ */
++static bool t6030_early_flip;
++module_param(t6030_early_flip, bool, 0644);
++MODULE_PARM_DESC(t6030_early_flip,
++		 "T6030 built-in panel: send flip before swap (experimental, default off)");
++
+ static const struct dcp_v14_board dcp_v14_board_t6030 = {
+ 	.name = "T6030",
+ 	.debugfs = "dcp-t6030",
+@@ -104,6 +114,7 @@ static const struct dcp_v14_board dcp_v14_board_t6030 = {
+ 	.handoff = "apple,t6030-handoff",
+ 	.promotion = true,
+ 	.panel_nits = true,
++	.swap_timestamps = true,
+ };
+ 
+ /*
+@@ -3357,6 +3368,14 @@ void iomfb_v14_7_flush(struct apple_dcp *dcp, struct drm_crtc *crtc,
+ 	if (!dcp->external)
+ 		dcp_v14_configure_backlight(dcp);
+ 	dcp->swap_start = ktime_get();
++	if (fb && dcp->v14 && !dcp->external &&
++	    dcp->v14->board == &dcp_v14_board_t6030 &&
++	    READ_ONCE(t6030_early_flip)) {
++		dcp_drm_crtc_page_flip(dcp, ktime_get());
++		dcp_v14_present(dcp->v14, fb, fb->width, fb->height,
++			       dcp->notch_height, cs);
++		return;
++	}
+ 	if (dcp->v14 && dcp_v14_present(dcp->v14, fb,
+ 					 fb ? (dcp->external ? p->src_w >> 16 : fb->width) : 0,
+ 					 fb ? (dcp->external ? p->src_h >> 16 : fb->height) : 0,
